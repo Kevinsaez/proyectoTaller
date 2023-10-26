@@ -1,8 +1,28 @@
+/* fuente titulos */
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&display=swap');
+/* font-family: 'Passion One', sans-serif; */
+
+/* fuente general */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;1,100;1,200&family=Passion+One:wght@400;700&display=swap');
+
+/* font-family: 'IBM Plex Mono', monospace; */
+/* font-family: 'Passion One', sans-serif; */
+
+h1{
+  font-family: 'Passion One', sans-serif;
+  color:rgb(231, 231, 26);
+  font-size: 50px;
+}
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(137, 228, 176);
 }
+
 body{
   background-image: url(./imagenes/fondo.jpg);
   background-attachment: fixed;
@@ -12,11 +32,12 @@ body{
   padding: 20px;
 }
 
+
 .header-contenedor{
-  margin-top: 200px;
+  margin-top: 50px;
   background-color: white;
-  background-color: rgba(128, 128, 128, 0.5); /* Color gris con transparencia */
+  background-color: rgba(119, 119, 119, 0.616); /* Color gris con transparencia */
   width: 70%;
-  height: 80%;
+  height: 70%;
   border-radius: 15px;
 }
