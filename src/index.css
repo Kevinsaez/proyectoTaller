@@ -41,3 +41,7 @@ body{
   height: 70%;
   border-radius: 15px;
 }
+
+.card{
+  width: 20rem;
+}
