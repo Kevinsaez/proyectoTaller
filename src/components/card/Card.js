@@ -1,19 +1,26 @@
+import { Fragment } from "react";
 
-export default function Card() {
+export default function Card({data}) {
+
     return (
-        
-            <div className="card flex- row flex-column p-2 m-2">
-                <div className="card-body">
-                    <h5 className="card-title">Nombre del Cliente</h5>
-                    <p className="card-text">Dni:</p>
-                    <p className="card-text">Vehiculo:</p>
-                    <p className="card-text">Marca:</p>
-                    <p className="card-text">Dominio:</p>
+
+            <Fragment>
+                <div className="card m-4">
+                <div className="d-flex flex-column card-body">
+                    <h2 className="align-items-center card-title w-100 m-2 p-2 gap-2">{data.nomApe}</h2>
+                        <h3>DNI:</h3>
+                        <p className="card-text gap-2">{data.nroDni}</p>
+                        <h3>LOCALIDAD:</h3>
+                        <p className="card-text gap-2">{data.localidad}</p>
+                        <h3>DOMICILIO:</h3>
+                        <p className="card-text gap-2">{data.domicilio}</p>
+                        <h3>E-MAIL:</h3>
+                        <p className="card-text gap-2">{data.email}</p>
+                        <h3>TELEFONO:</h3>
+                        <p className="card-text gap-2">{data.telefono}</p>   
                 </div>
-                <ul className="list-group list-group-flush">
-                    <li className="list-group-item">Dato 1: Valor 1</li>
-                    <li className="list-group-item">Dato 2: Valor 2</li>
-                </ul>
-            </div>
+                    <button type="button" class="btn btn-success">Vehículos</button>
+                </div>
+                </Fragment>
     );
   }

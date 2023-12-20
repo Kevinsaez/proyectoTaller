@@ -18,9 +18,9 @@ h1{
   margin: 0;
   box-sizing: border-box;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: bold;
-  color: rgb(137, 228, 176);
+  color: rgb(54, 139, 91);
 }
 
 body{
@@ -43,5 +43,8 @@ body{
 }
 
 .card{
-  width: 20rem;
+  width: 30rem;
+  color: rgb(9, 100, 48);
+  font-weight: bold !important;
+  font-size: 20px;
 }
