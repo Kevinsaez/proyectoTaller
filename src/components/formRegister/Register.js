@@ -12,7 +12,6 @@ export default function Register() {
                 <div className="row mb-3">
                     <div className="col-sm-10 w-100">
                         <input type="text" className="form-control" id="inputUserName" placeholder='User Name' required/>
-                        
                     </div>
                 </div>
                 <div className="row mb-3 ">

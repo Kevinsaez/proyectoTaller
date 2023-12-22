@@ -19,7 +19,7 @@ export default function Card({data}) {
                         <h3>TELEFONO:</h3>
                         <p className="card-text gap-2">{data.telefono}</p>   
                 </div>
-                    <button type="button" class="btn btn-success">Vehículos</button>
+                    <button type="button" className="btn btn-success">Vehículos</button>
                 </div>
                 </Fragment>
     );
