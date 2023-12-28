@@ -1,1 +1,8 @@
-
+.mensaje{
+    color: rgb(13, 192, 13);
+    font-size: 30px;
+    font-weight: bold;
+    background-color: black;
+    width: 50%;
+    border-radius: 10px;
+}

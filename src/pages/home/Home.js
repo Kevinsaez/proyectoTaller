@@ -1,4 +1,4 @@
-import { Link, ink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../Home/Home.css'
 export default function Home() {
   return (

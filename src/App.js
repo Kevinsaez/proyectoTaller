@@ -1,8 +1,5 @@
 import Router from './Router/Router';
-import './App.css';
-
-import Clientes from './pages/clientes/Clientes'
-
+// import './App.css';
 
 export default function App() {
 

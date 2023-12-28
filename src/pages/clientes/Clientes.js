@@ -9,7 +9,7 @@ export default function Clientes() {
   const [mostrarClientes, setmostrarClientes] = useState(true);
   const [mostrarForm, setmostrarForm] = useState(false);
   const [clienteEliminado, setclienteEliminado] = useState(false);
-  
+
 
   const traerInfo = async () => {
     await fetch("http://localhost:4000/")
@@ -23,7 +23,7 @@ export default function Clientes() {
   }, []);
 
   useEffect(() => {
-    if (clienteEliminado===true){
+    if (clienteEliminado === true) {
       traerInfo();
     }
   }, [clienteEliminado]);
@@ -50,12 +50,12 @@ export default function Clientes() {
                   return <Card key={cliente.idCliente} data={cliente} setclienteEliminado={setclienteEliminado} />
                 })}
               </div> :
-              <h3 className='alert-warning text-center fs-10 align-items-center justify-content-center'>Cliente eliminado!!!</h3>}
+              <h3 className='mensaje text-center alert-warning text-center fs-10 align-items-center justify-content-center'>Cliente eliminado!!!</h3>}
           </section> : ''}
         {mostrarForm ?
           <section className='Form d-flex flex-column align-items-center'>
             <button className='row btn btn-info align-self-end m-4 fs-5' onClick={() => verClientes()}>x</button>
-            <FormCargaCliente/>
+            <FormCargaCliente />
           </section> : ''}
       </main>
     </Fragment>
