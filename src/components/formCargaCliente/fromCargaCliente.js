@@ -125,7 +125,7 @@ export default function FormCargaCliente() {
                         className="form-control"
                         id="telefono"
                         name="telefono"
-                        placeholder="Ingrese elTelefono"
+                        placeholder="Ingrese el Telefono"
                         value={formValues.telefono}
                         onChange={handleInputChange}
                         required

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-export default function Card({ data, setclienteEliminado }) {
+export default function Card({ data, setclienteEliminado,editarCliente }) {
 
     const eliminarCliente = async () => {
 
@@ -24,6 +24,8 @@ export default function Card({ data, setclienteEliminado }) {
         return respuesta;
     }
 
+    
+    
     return (
 
         <Fragment>
@@ -44,7 +46,7 @@ export default function Card({ data, setclienteEliminado }) {
                 </div>
                 <div className="d-flex gap-2 m-2">
                     <button type="button" className="btn btn-danger fs-5 p-2 w-50" onClick={eliminarCliente}>Eliminar</button>
-                    <button type="button" className="btn btn-success p-2 w-50">Editar</button>
+                    <button type="button" className="btn btn-success p-2 w-50" onClick={editarCliente}>Editar</button>
                 </div>
             </div>
         </Fragment>
