@@ -12,11 +12,25 @@ export default function Clientes() {
 
 
   const traerInfo = async () => {
-    await fetch("http://localhost:4000/")
-      .then((res) => { return res.json() })
-      .then((data) => setClientes(data))
-      .catch((err) => { console.log(err) })
+    try {
+      const res = await fetch("http://localhost:4000/");
+      if (res.ok) {
+        const data = await res.json();
+        setClientes(data);
+      } else {
+        console.error('Error al obtener la información');
+      }
+    } catch (err) {
+      console.error('Error en la solicitud:', err);
+    }
   }
+  
+  // const traerInfo = async () => {
+  //   await fetch("http://localhost:4000/")
+  //     .then((res) => { return res.json() })
+  //     .then((data) => setClientes(data))
+  //     .catch((err) => { console.log(err) })
+  // }
 
   useEffect(() => {
     traerInfo();
@@ -31,6 +45,8 @@ export default function Clientes() {
   const verClientes = () => {
     setmostrarClientes(true);
     setmostrarForm(false);
+    setclienteEliminado(false);
+    
   }
   const verForm = () => {
     setmostrarClientes(false);
@@ -50,7 +66,7 @@ export default function Clientes() {
                   return <Card key={cliente.idCliente} data={cliente} setclienteEliminado={setclienteEliminado} />
                 })}
               </div> :
-              <h3 className='mensaje text-center alert-warning text-center fs-10 align-items-center justify-content-center'>Cliente eliminado!!!</h3>}
+              <h3 className='mensaje text-center alert-warning text-center fs-10 align-self-center justify-content-center'>Cliente eliminado!!!</h3>}
           </section> : ''}
         {mostrarForm ?
           <section className='Form d-flex flex-column align-items-center'>
