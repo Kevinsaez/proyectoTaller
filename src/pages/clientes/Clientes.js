@@ -24,13 +24,6 @@ export default function Clientes() {
       console.error('Error en la solicitud:', err);
     }
   }
-  
-  // const traerInfo = async () => {
-  //   await fetch("http://localhost:4000/")
-  //     .then((res) => { return res.json() })
-  //     .then((data) => setClientes(data))
-  //     .catch((err) => { console.log(err) })
-  // }
 
   useEffect(() => {
     traerInfo();
@@ -47,6 +40,7 @@ export default function Clientes() {
     setmostrarForm(false);
     setclienteEliminado(false);
   }
+  
   const verForm = () => {
     setmostrarClientes(false);
     setmostrarForm(true);

@@ -1,4 +1,6 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
+
 
 export default function Card({ data, setclienteEliminado,editarCliente }) {
 
@@ -24,9 +26,7 @@ export default function Card({ data, setclienteEliminado,editarCliente }) {
         return respuesta;
     }
 
-    
-    
-    return (
+        return (
 
         <Fragment>
             <div className="card container-fluid flex-wrap m-2">
@@ -46,7 +46,7 @@ export default function Card({ data, setclienteEliminado,editarCliente }) {
                 </div>
                 <div className="d-flex gap-2 m-2">
                     <button type="button" className="btn btn-danger fs-5 p-2 w-50" onClick={eliminarCliente}>Eliminar</button>
-                    <button type="button" className="btn btn-success p-2 w-50" onClick={editarCliente}>Editar</button>
+                    <Link to={'/editarClientes/'}><button type="button" className="btn btn-success p-2">Editar</button></Link>
                 </div>
             </div>
         </Fragment>
