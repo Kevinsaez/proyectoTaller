@@ -1,18 +1,17 @@
 import { useState } from "react"
-import { Fragment } from "react";
-import Nav from "../navegacion/Navegacion";
 
-export default function FormEditarCliente() {
+export default function FormEditarCliente({data,cancelarEdicion}) {
 
     const initialState = {
-        nomApe: '',
-        nroDni: '',
-        localidad: '',
-        domicilio: '',
-        email: '',
-        telefono: ''
+        nomApe: data.nomApe,
+        nroDni: data.nroDni,
+        localidad: data.localidad,
+        domicilio: data.domicilio,
+        email: data.email,
+        telefono: data.telefono
     };
-    const [formData, setFormData] = useState({ initialState });
+    
+    const [formData, setFormData] = useState(initialState);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -22,11 +21,11 @@ export default function FormEditarCliente() {
         });
     };
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const idCliente = 14;
-
+        const idCliente = data.idCliente;
         const apiUrl = `http://localhost:4000/cargarCliente/${idCliente}`;
 
         fetch(apiUrl, {
@@ -54,15 +53,15 @@ export default function FormEditarCliente() {
 
     };
 
-
     return (
-        <Fragment>
-            <Nav />
-            <div className="container align-items-center justify-content-center d-flex flex-column bg-dark w-50 m-2 p-5">
-                <h2 className="text-center m-4 justify-content-center">Formulario Editar de Cliente</h2>
-                <form onSubmit={handleSubmit} className="m-2 d-flex flex-column align-items-center justify-content-center gap-3 w-75">
+        <>
+           
+            <div className="container align-items-center justify-content-center d-flex flex-column bg-dark w-100 m-1">
+                 <button className='row btn btn-info align-self-end m-4 fs-5' onClick={()=>cancelarEdicion()}>x</button>
+                <h2 className="text-center justify-content-center">Formulario Editar de Cliente</h2>
+                <form onSubmit={handleSubmit} className="m-2 d-flex flex-column align-items-center justify-content-center gap-1 w-75">
                     <div className="col-sm-10 w-100">
-                        <label className="form-label mt-3" htmlFor="nomApe">Nombre y apellido:</label>
+                        <label className="form-label " htmlFor="nomApe">Nombre y apellido:</label>
                         <input
                             type="text"
                             className="form-control"
@@ -140,15 +139,14 @@ export default function FormEditarCliente() {
                         />
                     </div>
                     <div className="d-flex gap-5 align-items-center justify-content-center">
-                        <input
-                            className="btn btn-success d-block"
-                            type="submit"
-
-                        />
+                        <button className="btn btn-success d-block"
+                            type="submit">
+                            Editar
+                        </button>
                     </div>
                 </form>
             </div>
-        </Fragment>
+        </>
     );
 
 }

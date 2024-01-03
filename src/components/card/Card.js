@@ -1,8 +1,9 @@
-import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Fragment, useState } from "react";
+import FormEditarCliente from "../fromEditarCliente/formEditarCliente";
 
-
-export default function Card({ data, setclienteEliminado,editarCliente }) {
+export default function Card({ data, setclienteEliminado, editarCliente }) {
+    
+    const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
     const eliminarCliente = async () => {
 
@@ -26,13 +27,26 @@ export default function Card({ data, setclienteEliminado,editarCliente }) {
         return respuesta;
     }
 
-        return (
+    const toggleFormulario = () => {
+        setMostrarFormulario(!mostrarFormulario);
+    };
+
+    const cancelarEdicion = () => {
+        setMostrarFormulario(false);
+    };
+
+    return (
 
         <Fragment>
+        
+            <section>
+            {mostrarFormulario ? (
+                    <FormEditarCliente data={data} cancelarEdicion={cancelarEdicion}/>
+                ) : (
             <div className="card container-fluid flex-wrap m-2">
                 <div className="d-flex flex-column card-body">
                     <h2 className="align-items-center card-title w-100  p-2">{data.nomApe}</h2>
-                    <hr/>
+                    <hr />
                     <h3>DNI:</h3>
                     <p className="card-text gap-2">{data.nroDni}</p>
                     <h3>LOCALIDAD:</h3>
@@ -46,9 +60,11 @@ export default function Card({ data, setclienteEliminado,editarCliente }) {
                 </div>
                 <div className="d-flex gap-2 m-2">
                     <button type="button" className="btn btn-danger fs-5 p-2 w-50" onClick={eliminarCliente}>Eliminar</button>
-                    <Link to={'/editarClientes/'}><button type="button" className="btn btn-success p-2">Editar</button></Link>
+                    <button type="button" className="btn btn-warning fs-5 p-2 w-50" onClick={toggleFormulario}>Editar</button>
                 </div>
             </div>
+             )}
+            </section>
         </Fragment>
     );
 }

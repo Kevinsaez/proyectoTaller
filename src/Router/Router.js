@@ -9,7 +9,7 @@ export default function Router() {
             <Routes>
                 <Route path='/' element={<Home/>}/>
                 <Route path='/clientes' element={<Clientes/>}/>
-                <Route path='/editarClientes' element={<FormEditarCliente/>}/>
+                <Route path='/editarClientes/:idCliente' element={<FormEditarCliente/>}/>
             </Routes>
         </BrowserRouter>
     );
