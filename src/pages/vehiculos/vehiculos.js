@@ -1,9 +1,36 @@
+import { useState, useEffect} from 'react';
 import Nav from "../../components/navegacion/Navegacion";
+import CardVehiculo from '../../components/cardVehiculo/cardVehiculo';
+
 export default function Vehiculos() {
+  const [vehiculos, setVehiculos] = useState([]);
+
+    const traerInfo = async () => {
+        try {
+          const res = await fetch("http://localhost:4000/vehiculos");
+          if (res.ok) {
+            const datos = await res.json();
+            setVehiculos(datos);
+          } else {
+            console.error('Error al obtener la información');
+          }
+        } catch (err) {
+          console.error('Error en la solicitud:', err);
+        }
+      }
+      useEffect(() => {
+        traerInfo();
+      }, []);
+
     return (
-        <div className="">
+        <main className="">
             <Nav/>
             <h3 className="text-center m-4 fs-10 p-4">Vehiculos</h3>
-        </div>
+            <div className="card-container d-flex flex-wrap justify-content-center align-items-center">
+            {vehiculos.map((vehiculo) => {
+                  return <CardVehiculo key={vehiculo.idVehiculo} datos={vehiculo}/>
+                })}   
+            </div>
+        </main>
     );
 }
