@@ -139,7 +139,7 @@ export default function FormEditarCliente({data,cancelarEdicion}) {
                         />
                     </div>
                     <div className="d-flex gap-5 align-items-center justify-content-center">
-                        <button className="btn btn-success d-block"
+                        <button className="btn btn-success d-block mt-2"
                             type="submit">
                             Editar
                         </button>
