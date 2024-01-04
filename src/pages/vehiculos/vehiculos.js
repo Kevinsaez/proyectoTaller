@@ -25,7 +25,7 @@ export default function Vehiculos() {
     return (
         <main className="">
             <Nav/>
-            <h3 className="text-center m-4 fs-10 p-4">Vehiculos</h3>
+            <h3 className="text-center m-4 fs-10 p-4 alert alert-primary">Vehiculos</h3>
             <div className="card-container d-flex flex-wrap justify-content-center align-items-center">
             {vehiculos.map((vehiculo) => {
                   return <CardVehiculo key={vehiculo.idVehiculo} datos={vehiculo}/>
