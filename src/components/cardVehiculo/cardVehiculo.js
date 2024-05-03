@@ -1,13 +1,14 @@
 // import {useState } from "react";
 
-export default function CardVehiculo({datos}) {
-    
+export default function CardVehiculo({ datos }) {
+
     return (
-           
-            <section>
+
+        <section>
             <div className="card container-fluid flex-wrap m-2">
                 <div className="d-flex flex-column card-body">
                     <h2 className="align-items-center card-title w-100  p-2">{datos.dominio}</h2>
+                    <img className="w-50 align-self-center" src={datos.imagenVehiculo} alt='imagen del vehiculo del cliente'/>
                     <hr />
                     <h3>TITULAR:</h3>
                     <p className="card-text gap-2">{datos.titular}</p>
@@ -20,10 +21,10 @@ export default function CardVehiculo({datos}) {
                     <h3>NUMERO DE MOTOR:</h3>
                     <p className="card-text gap-2">{datos.nroMotor}</p>
                     <h3>NUMER DE CHASIS:</h3>
-                    <p className="card-text gap-2">{datos.neroChasis}</p>                    
+                    <p className="card-text gap-2">{datos.neroChasis}</p>
                 </div>
             </div>
-            </section>
-  
+        </section>
+
     );
 }

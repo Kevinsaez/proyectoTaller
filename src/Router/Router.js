@@ -3,6 +3,8 @@ import Clientes from '../pages/clientes/Clientes'
 import Home from '../pages/Home/Home'
 import Vehiculos from '../pages/vehiculos/vehiculos'
 import Presupuestos from '../pages/presupuestos/presupuestos'
+import VehiculosCliente from '../pages/vehiculosCliente/vehiculosCliente'
+
 
 export default function Router() {
     return (
@@ -12,6 +14,7 @@ export default function Router() {
                 <Route path='/clientes' element={<Clientes/>}/>
                 <Route path='/vehiculos' element={<Vehiculos/>}/>
                 <Route path='/presupuestos' element={<Presupuestos/>}/>
+                <Route path='/vehiculosCliente/' element={<VehiculosCliente/>}/>
             </Routes>
         </BrowserRouter>
     );

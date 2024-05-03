@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import FormEditarCliente from "../fromEditarCliente/formEditarCliente";
-
+import { Link } from "react-router-dom";
 export default function Card({ data, setclienteEliminado, editarCliente }) {
     
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
@@ -61,6 +61,9 @@ export default function Card({ data, setclienteEliminado, editarCliente }) {
                 <div className="d-flex gap-2 m-2">
                     <button type="button" className="btn btn-danger fs-5 p-2 w-50" onClick={eliminarCliente}>Eliminar</button>
                     <button type="button" className="btn btn-warning fs-5 p-2 w-50" onClick={toggleFormulario}>Editar</button>
+                </div>
+                <div className="d-flex gap-2 m-2">
+                    <Link to = "/vehiculosCliente/" className="btn btn-dark fs-5 p-2 w-100">ver vehiculos</Link>
                 </div>
             </div>
              )}
